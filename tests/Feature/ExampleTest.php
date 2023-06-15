@@ -74,6 +74,25 @@ it('will not use debugging functions')
     ->expect(['dd', 'dump'])
     ->each->not->toBeUsed();
 
+// Datasets
+it('has a publisher', function (string $game, string $publisher) {
+    expect($publisher)->not->toBeEmpty();
+})->with([
+    ['Call of Duty', 'Activision'],
+    ['Minecraft','Mojang'],
+    ['FIFA', 'EA Sports'],
+    ['Overwatch', 'Blizzard'],
+]);
+
+// Exceptions
+it('will throw an invalid argument exception', function () {
+    match ('mario') {
+        'luigi' => 'green',
+        'waluigi' => 'purple',
+        default => throw new InvalidArgumentException('Invalid character'),
+    };
+})->throws(InvalidArgumentException::class);
+
 // Mocking
 it('will mock games', function () {
    partialMock(GameServiceInterface::class)
@@ -94,6 +113,6 @@ it('will mock games', function () {
 
 // Code coverage
 
-
+// https://github.com/TebexJamesHarley/pest
 
 

@@ -49,6 +49,9 @@
         ],
         "test": [
             "./vendor/bin/pest --coverage --coverage-html tests/reports/clover.html --min=90"
+        ],
+        "test-parallel": [
+            "./vendor/bin/pest --parallel --coverage --coverage-html tests/reports/clover.html --min=90"
         ]
     },
     "extra": {
