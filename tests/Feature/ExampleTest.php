@@ -5,6 +5,9 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use function Pest\{Laravel\get, Laravel\partialMock};
 
+// https://laravel.com/docs/10.x/releases#pest-scaffolding
+// https://laravel.com/docs/master/testing#creating-tests
+
 // Example test
 it('returns a successful response', function () {
     $response = $this->get('/');
